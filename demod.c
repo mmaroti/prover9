@@ -373,13 +373,12 @@ void demod1(Topform c, Topform demodulator, int direction,
 	    Ilist *fpos, Ilist *ipos,
 	    BOOL lex_order_vars)
 {
-  Term result;
   Literals lit;
   int n = 0;
 
   for (lit = c->literals, *ipos = NULL; lit && *ipos == NULL; lit=lit->next) {
     n++;
-    result = demod1_recurse(lit->atom, lit->atom, demodulator,direction,ipos,
+    demod1_recurse(lit->atom, lit->atom, demodulator,direction,ipos,
 			    lex_order_vars);
   }
 

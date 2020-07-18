@@ -102,7 +102,7 @@ Plist discrim_flat_retrieve_leaf(Flatterm fin, Discrim root,
 {
   Flatterm f = NULL;
   Discrim d = NULL;
-  BOOL status = GO;
+  int status = GO;
 
   if (root) {  /* first call */
     d = root->u.kids;
@@ -155,9 +155,7 @@ Plist discrim_flat_retrieve_leaf(Flatterm fin, Discrim root,
       status = BACKTRACK;
     else {
       int symnum = SYMNUM(f);
-      Discrim dd = NULL;
       while (d && d->symbol < symnum) {
-	dd = d;
 	d = d->next;
       }
       if (!d || d->symbol != symnum)

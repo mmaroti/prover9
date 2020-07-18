@@ -272,11 +272,10 @@ void complex4_p1(Term s, Term t, int *n)
 {
   /* Traverse the term and call complex4_p2 for each. 
      We will consider all pairs of distinct subterms.  */
-  BOOL dummy;
   int i;
   for (i = 0; i < ARITY(s); i++)
     complex4_p1(ARG(s,i), t, n);
-  dummy = complex4_p2(s, t, n);
+  complex4_p2(s, t, n);
 }  /* complex4_p1 */
 
 /*************

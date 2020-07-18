@@ -647,7 +647,6 @@ Term mindex_retrieve_next(Mindex_pos pos)
   else {
     Term tq, tf;
     Context cq, cf;
-    Trail tr;
     BOOL ok;
 
     tq = pos->query_term;
@@ -666,7 +665,6 @@ Term mindex_retrieve_next(Mindex_pos pos)
 #if 0
       printf("potential mate, %d: ", tf->INDEX_ID); p_term(tf);
 #endif	
-      tr = NULL;
       switch (pos->query_type) {
       case UNIFY:
 	ok = unify(tq, cq, tf, cf, &(pos->tr)); break;

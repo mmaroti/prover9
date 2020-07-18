@@ -183,8 +183,8 @@ Term fast_read_term(FILE *fin, FILE *fout)
     Pos = 0;
     t = fast_parse(s);
     if (s[Pos] != '.') {
-      fprintf(stderr, s);
-      fprintf(stdout, s);
+      fprintf(stderr, "%s", s);
+      fprintf(stdout, "%s", s);
       fatal_error("fast_read_term, term ends before period.");
     }
     return t;

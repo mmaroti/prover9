@@ -344,7 +344,7 @@ void para_into(Literals from_lit, int from_side, Context cf, Ilist from_pos,
 	       BOOL skip_top,
 	       void (*proc_proc) (Topform))
 {
-  if ((!VARIABLE(into) | Para_into_vars) && basic_check(into)) {
+  if ((!VARIABLE(into) || Para_into_vars) && basic_check(into)) {
     int i;
     if (COMPLEX(into)) {
       Ilist last = ilist_last(into_pos);

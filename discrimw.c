@@ -138,34 +138,6 @@ void p_discrimw_mem(void)
 
 /*************
  *
- *  check_flat
- *
- *************/
-
-static
-Flat check_flat(Flat f)
-{
-  Flat last;
-  int i, arity;
-
-  if (f->next != NULL && f->next->prev != f)
-    fprintf(stderr, "check_flat: next-prev error\n");
-
-  if (f->place_holder)
-    arity = 0;
-  else
-    arity = ARITY(f->t);
-  
-  last = f;
-  for (i = 0; i < arity; i++) 
-    last = check_flat(last->next);
-  if (f->last != last)
-    fprintf(stderr, "check_flat: last is wrong\n");
-  return last;
-}  /* check_flat */
-
-/*************
- *
  *  p_flat
  *
  *************/

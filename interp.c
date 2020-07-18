@@ -355,10 +355,10 @@ well-formedness first by calling compile_interp().
 void transpose_binary(Term t)
 {
   int number_of_ops, n;
-  int i, rc;
+  int i;
   Term operations;
 
-  rc = str_to_int(sn_to_str(SYMNUM(ARG(t,0))), &n);
+  str_to_int(sn_to_str(SYMNUM(ARG(t,0))), &n);
   operations = ARG(t,2);
   number_of_ops = listterm_length(operations);
 

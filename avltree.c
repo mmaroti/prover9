@@ -655,7 +655,7 @@ void p_avl(Avl_node p, int level)
     p_avl(p->right, level+1);
     for (i = 0; i < level; i++)
       printf("    ");
-    printf("%4d\n", (int) p->item);
+    printf("%p\n", p->item);
     p_avl(p->left, level+1);
   }
 }  /* p_avl */

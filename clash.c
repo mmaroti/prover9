@@ -280,7 +280,7 @@ void clash_recurse(Clash first,
     Topform resolvent = resolve(first, rule);
     (*proc_proc)(resolvent);
   }
-  else if (!p->clashable | p->clashed)
+  else if (!p->clashable || p->clashed)
     clash_recurse(first, p->next, sat_test, rule, proc_proc);
   else {
     Term fnd_atom;

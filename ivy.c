@@ -630,7 +630,7 @@ Plist factor2_instances(Topform c, int n1, int n2, int *next_id)
 
   if (l1->sign == l2->sign && unify(a1, subst, a2, subst, &tr)) {
 
-    Literals l1i, l2i, lit;
+    Literals l2i, lit;
     Topform factor, factor_renum, c_instance;
 
     c_instance = instantiate_inference(c, subst);
@@ -639,7 +639,7 @@ Plist factor2_instances(Topform c, int n1, int n2, int *next_id)
 
     undo_subst(tr);
 
-    l1i = ith_literal(c_instance->literals, n1);
+    ith_literal(c_instance->literals, n1);
     l2i = ith_literal(c_instance->literals, n2);
 
     /* construct the factor */

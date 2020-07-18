@@ -1301,11 +1301,10 @@ int or_symnum(void)
 /* PUBLIC */
 void declare_base_symbols(void)
 {
-  int sn;
-  sn = str_to_sn(false_sym(), 0);
-  sn = str_to_sn(true_sym(), 0);
-  sn = str_to_sn("false", 0);
-  sn = str_to_sn("true", 0);
+  str_to_sn(false_sym(), 0);
+  str_to_sn(true_sym(), 0);
+  str_to_sn("false", 0);
+  str_to_sn("true", 0);
 }  /* declare_base_symbols */
 
 /****************************************************************************/

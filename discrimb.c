@@ -479,34 +479,6 @@ void discrim_bind_update(Term t, Discrim root, void *object, Indexop op)
 
 /*************
  *
- *  check_flat2
- *
- *************/
-
-static
-Flat2 check_flat2(Flat2 f)
-{
-  Flat2 last;
-  int i, arity;
-
-  if (f->next != NULL && f->next->prev != f)
-    fprintf(stderr, "check_flat2: next-prev error\n");
-
-  if (f->place_holder)
-    arity = 0;
-  else
-    arity = ARITY(f->t);
-  
-  last = f;
-  for (i = 0; i < arity; i++) 
-    last = check_flat2(last->next);
-  if (f->last != last)
-    fprintf(stderr, "check_flat2: last is wrong\n");
-  return last;
-}  /* check_flat2 */
-
-/*************
- *
  *  p_flat2
  *
  *************/
