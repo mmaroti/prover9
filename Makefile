@@ -5,11 +5,6 @@ CC = gcc
 # XFLAGS can be specified on the command line (see XFLAGS below)
 
 CFLAGS = $(XFLAGS) -O -Wall
-# CFLAGS = $(XFLAGS) -O6 -Wall
-# CFLAGS = $(XFLAGS) -g  -O -Wall
-# CFLAGS = $(XFLAGS) -g -O0 -Wall
-# CFLAGS = $(XFLAGS) -pg -O -Wall
-# CFLAGS = $(XFLAGS)  -Wall -pedantic
 
 BASE_OBJ = order.o clock.o nonport.o\
 	   fatal.o ibuffer.o memory.o hash.o string.o strbuf.o\
@@ -35,35 +30,11 @@ MISC_OBJ = std_options.o banner.o ioutil.o tptp_trans.o top_input.o
 OBJECTS = $(BASE_OBJ) $(TERM_OBJ) $(UNIF_OBJ) $(CLAS_OBJ)\
           $(INFE_OBJ) $(MODL_OBJ) $(MISC_OBJ)
 
-libladr.a: $(OBJECTS)
+all: $(OBJECTS)
 	$(AR) rs libladr.a $(OBJECTS)
 
-##############################################################################
-
-lib ladr libladr:
-	$(MAKE) libladr.a
-
-dep:
-	util/make_dep $(OBJECTS)
-
 clean:
-	/bin/rm -f *.o
-
-realclean:
-	/bin/rm -f *.o *.a
-
-protos:
-	util/make_protos $(OBJECTS)
-
-htmls:
-	util/make_htmls $(OBJECTS)
-	cp index.html.master html/index.html
-
-tags:
-	etags *.c
-
-dio-solo:
-	$(CC) $(CFLAGS) -DSOLO -o dio dioph.c
+	/bin/rm -f *.o libladr.a
 
 # The rest of the file is generated automatically by util/make_dep
 
