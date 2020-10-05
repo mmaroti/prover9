@@ -157,6 +157,3 @@ add_library(ladr STATIC
     xproofs.c
     xproofs.h
 )
-
-set_property(TARGET ladr PROPERTY C_STANDARD 99)
-target_compile_options(ladr PUBLIC -Wall -O2)

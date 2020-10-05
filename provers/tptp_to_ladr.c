@@ -81,12 +81,11 @@ int main(int argc, char **argv)
 
   Ilist fp_syms = NULL;
   I2list map;
-  int i;
 
   BOOL quote_bad_ladr_syms = string_member("-q", argv, argc);
 
   init_standard_ladr();
-  i = register_attribute("label",  STRING_ATTRIBUTE);
+  register_attribute("label",  STRING_ATTRIBUTE);
 
   clear_parse_type_for_all_symbols();
   declare_tptp_input_types();
