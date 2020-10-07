@@ -314,7 +314,7 @@ Flatterm fdemod(Flatterm f, Discrim root, Context subst,
       return f;  /* step limit has been reached */
     else {
       /* try to rewrite top */
-      Discrim_pos dpos;
+      Discrim_pos dpos = 0;
       Term candidate = discrim_flat_retrieve_first(f, root, subst, &dpos);
       BOOL rewrite = FALSE;
 
