@@ -23,7 +23,7 @@
 #include "../ladr/clausify.h"
 #include "search.h"
 #include "utilities.h"
-#include "../mace4.src/msearch.h"
+#include "../mace4/msearch.h"
 
 /*************
  *

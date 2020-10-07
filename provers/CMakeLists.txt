@@ -50,17 +50,17 @@ add_executable(newsax
 )
 target_link_libraries(newsax PUBLIC provers)
 
-# add_executable(cgrep
-#     cgrep.c
-# )
-# target_link_libraries(cgrep PUBLIC provers)
+add_executable(cgrep
+    cgrep.c
+)
+target_link_libraries(cgrep PUBLIC provers)
 
 # add_executable(mprover
 #     mprover.c
 # )
 # target_link_libraries(mprover PUBLIC provers)
 
-# add_executable(iterate4
-#     iterate4.c
-# )
-# target_link_libraries(iterate4 PUBLIC provers)
+add_executable(iterate4
+    iterate4.c
+)
+target_link_libraries(iterate4 PUBLIC provers)

@@ -24,26 +24,7 @@
 #include "../ladr/top_input.h"
 #include "utilities.h"
 #include "search.h"
-
-/*************
- *
- *    void print_banner(argc, argv)
- *
- *************/
-
-static
-void print_banner(int argc, char **argv)
-{
-  int i;
-  printf("----- %s %s, %s -----\n", PROVER_NAME, PROVER_VERSION, PROGRAM_DATE);
-  printf("Process %d was started by %s on %s,\n%s",
-	 my_process_id(), username(), hostname(), get_date());
-	 
-  printf("The command was \"");
-  for(i = 0; i < argc; i++)
-    printf("%s%s", argv[i], (i < argc-1 ? " " : ""));
-  printf("\".\n");
-}  // print_banner
+#include "provers.h"
 
 /*************
  *
@@ -58,13 +39,14 @@ int main(int argc, char **argv)
   BOOL go;
   int max_wt_flag;
 
-  print_banner(argc, argv);         // local routine
+  print_banner(argc, argv, PROVER_NAME, PROGRAM_VERSION, PROGRAM_DATE, FALSE);
 
   /***************** Initialize and read the input ***************************/
 
   input = std_prover_init_and_input(argc, argv,
-			    TRUE,           // echo input to stdout
-			    KILL_UNKNOWN);  // unknown flags/parms are fatal
+			   TRUE,           // clausify
+			   TRUE,           // echo input to stdout
+			   KILL_UNKNOWN);  // unknown flags/parms are fatal
 
   /******************** Search for a proof *******************************/
 
