@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1)
-project(ladr LANGUAGES C)
+project(prover9 LANGUAGES C)
 
 set(CMAKE_C_STANDARD 99)
 add_compile_options(-Wall -O2)

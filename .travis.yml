@@ -30,11 +30,10 @@ matrix:
       compiler: clang
     - os: windows
       script:
-        - mkdir -p build
+        - mkdir build
         - cd build
         - cmake ..
-        - dir
-        - msbuild prover9.sln
+        - cmake --build .
 
 script:
   - mkdir -p build
