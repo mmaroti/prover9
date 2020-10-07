@@ -55,10 +55,10 @@ add_executable(cgrep
 )
 target_link_libraries(cgrep PUBLIC provers)
 
-# add_executable(mprover
-#     mprover.c
-# )
-# target_link_libraries(mprover PUBLIC provers)
+add_executable(mprover
+    mprover.c
+)
+target_link_libraries(mprover PUBLIC provers maces)
 
 add_executable(iterate4
     iterate4.c

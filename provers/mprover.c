@@ -21,8 +21,10 @@
 
 #include "../ladr/banner.h"
 #include "../ladr/clausify.h"
+#include "../ladr/interp.h"
 #include "search.h"
 #include "utilities.h"
+#include "provers.h"
 #include "../mace4/msearch.h"
 
 /*************
@@ -56,7 +58,7 @@ BOOL disprover(Plist usable, Plist sos, Plist demodulators,
 
   assign_parm(opt.max_seconds, parm(max_sec), TRUE);
   assign_parm(opt.iterate_up_to, 100, TRUE);
-  set_flag(opt.print_models_portable, TRUE);
+  // set_flag(opt.print_models_portable, TRUE);
   set_flag(opt.return_models, TRUE);
 
   // call mace4
@@ -64,7 +66,7 @@ BOOL disprover(Plist usable, Plist sos, Plist demodulators,
   results = mace4(clauses, &opt);
 
   if (results->success) {
-    fprint_interp_2(stdout, results->models->v);
+    fprint_interp_portable(stdout, results->models->v);
   }
 
   zap_plist(clauses);  // shallow zap
@@ -96,8 +98,9 @@ int main(int argc, char **argv)
   /***************** Initialize and read the input ***************************/
 
   input = std_prover_init_and_input(argc, argv,
-			    TRUE,           // echo input to stdout
-			    KILL_UNKNOWN);  // unknown flags/parms are fatal
+			   TRUE,           // clausify
+			   TRUE,           // echo input to stdout
+			   KILL_UNKNOWN);  // unknown flags/parms are fatal
 
   /******************** Search for a counterexample **********************/
 

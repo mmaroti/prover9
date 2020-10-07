@@ -1,5 +1,4 @@
-add_executable(mace4
-    mace4.c
+add_library(maces
     estack.c
     util.c
     print.c
@@ -15,4 +14,9 @@ add_executable(mace4
 	commandline.c
     msearch.c
 )
-target_link_libraries(mace4 PUBLIC ladr)
+target_link_libraries(maces PUBLIC ladr)
+
+add_executable(mace4
+    mace4.c
+)
+target_link_libraries(mace4 PUBLIC maces)
