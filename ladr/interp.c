@@ -2235,7 +2235,7 @@ Ordertype compare_interp(Interp a, Interp b)
       }
     }
   }
-  return TRUE;
+  return SAME_AS;
 }  /* compare_interp */
 
 /*************

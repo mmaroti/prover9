@@ -218,7 +218,7 @@ Topform resolve(Clash first, Just_type rule)
   int n;
 
   /* First, include literals in the nucleus. */
-  for (p = first; p != NULL; p = p->next, n++) {
+  for (p = first; p != NULL; p = p->next) {
     if (!p->clashed)
       r->literals = append_literal(r->literals,
 				   apply_lit(p->nuc_lit, p->nuc_subst));

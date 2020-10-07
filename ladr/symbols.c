@@ -475,7 +475,7 @@ unsigned hash_sym(char *s, int arity)
     x = (x << 4) | c;
     s++;
   }
-  return abs(x) % SYM_TAB_SIZE;
+  return x % SYM_TAB_SIZE;
 }  /* hash_sym */
 
 /*************

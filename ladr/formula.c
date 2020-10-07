@@ -705,7 +705,7 @@ Formula formula_copy(Formula f)
 */
 
 /* PUBLIC */
-BOOL dual_type(int op)
+Ftype dual_type(int op)
 {
   switch (op) {
   case AND_FORM: return OR_FORM;

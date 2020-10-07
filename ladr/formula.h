@@ -101,7 +101,7 @@ BOOL formula_ident(Formula f, Formula g);
 
 Formula formula_copy(Formula f);
 
-BOOL dual_type(int op);
+Ftype dual_type(int op);
 
 Formula dual(Formula f);
 

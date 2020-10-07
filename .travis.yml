@@ -1,5 +1,44 @@
 language: c
 
+matrix:
+  include:
+    - os: linux
+      arch: amd64
+      dist: focal
+      env:
+        - MAKE="make"
+    - os: linux
+      arch: amd64
+      dist: focal
+      env:
+        - MAKE="make"
+    - os: linux
+      arch: arm64
+      dist: focal
+      env:
+        - MAKE="make"
+    - os: linux
+      arch: amd64
+      dist: bionic
+      env:
+        - MAKE="make"
+    - os: linux
+      arch: amd64
+      dist: xenial
+      env:
+        - MAKE="make"
+    - os: linux
+      arch: amd64
+      dist: trusty
+      env:
+        - MAKE="make"
+    - os: osx
+      env:
+        - MAKE="make"
+    - os: windows
+      env:
+        - MAKE="nmake"
+
 os:
   - linux
   - osx
@@ -13,7 +52,7 @@ script:
   - mkdir -p build
   - cd build
   - cmake .. 
-  - make
+  - ${MAKE}
 
 sudo: false
 
