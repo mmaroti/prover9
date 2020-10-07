@@ -32,13 +32,17 @@ matrix:
       script:
         - mkdir -p build
         - cd build
-        - cmake .. 
+        - cmake -G "NMake Makefiles" ..
+        - dir
         - mingw32-make
+        - nmake
+        - cmake ..
+        - msbuild prover9.sln
 
 script:
   - mkdir -p build
   - cd build
-  - cmake .. 
+  - cmake ..
   - make -j
 
 sudo: false
