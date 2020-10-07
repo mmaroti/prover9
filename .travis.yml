@@ -5,39 +5,37 @@ matrix:
     - os: linux
       arch: amd64
       dist: focal
-      env:
-        - MAKE="make"
+      compiler: gcc
+      env: MAKE="make"
     - os: linux
       arch: amd64
       dist: focal
-      env:
-        - MAKE="make"
+      compiler: clang
+      env: MAKE="make"
     - os: linux
       arch: arm64
       dist: focal
-      env:
-        - MAKE="make"
+      compiler: gcc
+      env: MAKE="make"
     - os: linux
       arch: amd64
       dist: bionic
-      env:
-        - MAKE="make"
+      compiler: gcc
+      env: MAKE="make"
     - os: linux
       arch: amd64
       dist: xenial
-      env:
-        - MAKE="make"
+      compiler: gcc
+      env: MAKE="make"
     - os: linux
       arch: amd64
       dist: trusty
-      env:
-        - MAKE="make"
+      compiler: gcc
+      env: MAKE="make"
     - os: osx
-      env:
-        - MAKE="make"
+      env: MAKE="make"
     - os: windows
-      env:
-        - MAKE="nmake"
+      env: MAKE="nmake"
 
 os:
   - linux
@@ -52,7 +50,7 @@ script:
   - mkdir -p build
   - cd build
   - cmake .. 
-  - ${MAKE}
+  - eval "${MAKE}"
 
 sudo: false
 
