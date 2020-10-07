@@ -70,7 +70,8 @@ static struct {
 
   // basic properties of usable+sos
 
-  BOOL horn, unit, equality, number_of_clauses, number_of_neg_clauses;
+  BOOL horn, unit, equality;
+  int number_of_clauses, number_of_neg_clauses;
 
   // other stuff
 
