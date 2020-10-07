@@ -20,8 +20,6 @@
 #define TP_MEMORY_H
 
 #include "fatal.h"
-#include <sys/time.h>
-#include <sys/resource.h>
 
 /* INTRODUCTION
 */
