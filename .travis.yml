@@ -33,13 +33,13 @@ matrix:
         - mkdir -p build
         - cd build
         - cmake .. 
-        - nmake
+        - mingw32-make
 
 script:
   - mkdir -p build
   - cd build
   - cmake .. 
-  - make
+  - make -j
 
 sudo: false
 
