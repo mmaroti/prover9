@@ -37,20 +37,11 @@ matrix:
     - os: windows
       env: MAKE="nmake"
 
-os:
-  - linux
-  - osx
-  - windows
-
-compiler:
-  - clang
-  - gcc
-
 script:
   - mkdir -p build
   - cd build
   - cmake .. 
-  - eval "${MAKE}"
+  - $MAKE
 
 sudo: false
 
