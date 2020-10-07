@@ -847,7 +847,7 @@ BOOL iterate_ok(int n, char *class)
  *************/
 
 static
-int next_domain_size(n)
+int next_domain_size(int n)
 {
   int top = (parm(Opt->end_size) == -1 ? INT_MAX : parm(Opt->end_size));
       

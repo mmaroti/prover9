@@ -233,7 +233,7 @@ int select_concentric(int min_id, int max_id)
  *
  *************/
 
-int select_concentric_band(min_id, max_id, max_constrained)
+int select_concentric_band(int min_id, int max_id, int max_constrained)
 {
   int max = -1;
   int id_of_max = -1;

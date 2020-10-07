@@ -100,41 +100,35 @@ void p_model(BOOL print_head)
 	  printf("\n %s : %d\n", name, v);
       }
       else if (p->arity == 1) {
-	char *s1 = n <= 10 ? "%2d" : "%3d";
-	char *s2 = n <= 10 ? "--"  : "---";
-	char *s3 = n <= 10 ? " -"  : "  -";
 	int i;
 	for (i = 0; i < n; i++) {
 	  printf("\n %s :\n", name);
 	  printf("       ");
 	  for (i = 0; i < n; i++)
-	    printf(s1, i);
+	    printf(n <= 10 ? "%2d" : "%3d", i);
 	  printf("\n    ---");
 	  for (i = 0; i < n; i++)
-	    printf(s2);
+	    printf(n <= 10 ? "--"  : "---");
 	  printf("\n       ");
 	  for (i = 0; i < n; i++) {
 	    int v = f1_val(p->base, i);
 	    if (v < 0)
-	      printf(s3);
+	      printf(n <= 10 ? " -"  : "  -");
 	    else
-	      printf(s1, v);
+	      printf(n <= 10 ? "%2d" : "%3d", v);
 	  }
 	  printf("\n");	  
 	}
       }
       else if (p->arity == 2) {
-	char *s1 = n <= 10 ? "%2d" : "%3d";
-	char *s2 = n <= 10 ? "--"  : "---";
-	char *s3 = n <= 10 ? " -"  : "  -";
 	int i, j;
 	printf("\n %s :\n", name);
 	printf("      |");
 	for (i = 0; i < n; i++)
-	  printf(s1, i);
+	  printf(n <= 10 ? "%2d" : "%3d", i);
 	printf("\n    --+");
 	for (i = 0; i < n; i++)
-	  printf(s2);
+	  printf(n <= 10 ? "--"  : "---");
 	printf("\n");
 
 	for (i = 0; i < n; i++) {
@@ -142,9 +136,9 @@ void p_model(BOOL print_head)
 	  for (j = 0; j < n; j++) {
 	    int v = f2_val(p->base, i, j);
 	    if (v < 0)
-	      printf(s3);
+	      printf(n <= 10 ? " -"  : "  -");
 	    else
-	      printf(s1, v);
+	      printf(n <= 10 ? "%2d" : "%3d", v);
 	  }
 	  printf("\n");
 	}

@@ -33,12 +33,11 @@ void init_attrs(void)
   // This will allow these attributes to occur on clauses.
   // Mace4 will ignore these attributes.
 
-  int id;
-  id = register_attribute("label",         STRING_ATTRIBUTE);
-  id = register_attribute("bsub_hint_wt",     INT_ATTRIBUTE);
-  id = register_attribute("answer",          TERM_ATTRIBUTE);
-  id = register_attribute("action",          TERM_ATTRIBUTE);
-  id = register_attribute("action2",         TERM_ATTRIBUTE);
+  register_attribute("label",         STRING_ATTRIBUTE);
+  register_attribute("bsub_hint_wt",     INT_ATTRIBUTE);
+  register_attribute("answer",          TERM_ATTRIBUTE);
+  register_attribute("action",          TERM_ATTRIBUTE);
+  register_attribute("action2",         TERM_ATTRIBUTE);
 }  /* init_attrs */
 
 /*************

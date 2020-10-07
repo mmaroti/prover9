@@ -6,3 +6,4 @@ add_compile_options(-Wall -O2)
 
 add_subdirectory(ladr)
 add_subdirectory(provers)
+add_subdirectory(mace4)
